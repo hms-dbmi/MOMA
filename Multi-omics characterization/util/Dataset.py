@@ -3,27 +3,7 @@ from torch.utils.data import DataLoader, Dataset, Sampler
 import numpy as np
 import joblib
 import pickle
-
-
-# def load_TMA_data():
-#     with open(file_to_patch_features, 'rb') as f:  #please input Patch features pickle
-#         patch_features = pickle.load(f)
-
-#     #TMA每個slide切下來的patch太少張了，所以每張patch都有去做9次aug，來增加資料量
-#     with open('../data/TMA/R50ImageNet_224x224(512_256)_norm_augment_9_feature_dict.pkl', 'rb') as f:
-#         patch_features.update(pickle.load(f))
-
-#     with open('../data/TMA/Feature/R50ImageNet_224x224(512_256)_tumorFilter_TumorId_cluster_label_k=10_less30.pkl', 'rb') as f:
-#         cluster_label = pickle.load(f)
-
-#     for k, v in cluster_label.items():
-#         temp = {}
-#         for p, c in v.items():
-#             for i in range(9):
-#                 temp.update({p + '_aug_{}'.format(i+1) : c})
-#         v.update(temp)
-
-#     return patch_features, cluster_label    
+ 
 
 def load_data(cancer_type = 'COAD', level = 'slide', use_kather_data = True):
     if(use_kather_data):
