@@ -3,64 +3,44 @@ from torch.utils.data import DataLoader, Dataset, Sampler
 import numpy as np
 import joblib
 import pickle
-
-
-def load_TMA_data():
-    with open('../data/TMA/R50ImageNet_224x224(512_256)_norm_feature_dict.pkl', 'rb') as f:
-        patch_features = pickle.load(f)
-
-    #TMA每個slide切下來的patch太少張了，所以每張patch都有去做9次aug，來增加資料量
-    with open('../data/TMA/R50ImageNet_224x224(512_256)_norm_augment_9_feature_dict.pkl', 'rb') as f:
-        patch_features.update(pickle.load(f))
-
-    with open('../data/TMA/Feature/R50ImageNet_224x224(512_256)_tumorFilter_TumorId_cluster_label_k=10_less30.pkl', 'rb') as f:
-        cluster_label = pickle.load(f)
-
-    for k, v in cluster_label.items():
-        temp = {}
-        for p, c in v.items():
-            for i in range(9):
-                temp.update({p + '_aug_{}'.format(i+1) : c})
-        v.update(temp)
-
-    return patch_features, cluster_label    
+ 
 
 def load_data(cancer_type = 'COAD', level = 'slide', use_kather_data = True):
     if(use_kather_data):
-        with open('../data/kather_msimss/Feature/R50ImageNet_feature.pkl', 'rb') as f:
+        with open(file_to_patch_features_pickle, 'rb') as f:  #please input
             patch_features = pickle.load(f)
-        with open('../data/kather_msimss/Feature/R50ImageNet_patient_cluster_label_k=10.pkl', 'rb') as f:
+        with open(file_to_cluster_pickle, 'rb') as f:  #please input
             cluster_label = pickle.load(f)
 
         return patch_features, cluster_label 
 
     if cancer_type == 'COAD':
 
-        patch_features = joblib.load('../data/COAD_Frozen/EXTREACT_FEATURE/ResNet50ImageNet_TCGA_feature_tumor_only.pkl')
+        patch_features = joblib.load(file_to_patch_features_pickle_COAD)  #please input
 
-        with open('../data/COAD_Frozen/EXTREACT_FEATURE/ResNet50ImageNet_TCGA_{}_cluster_label_k=10_tumor_only.pkl'.format(level), 'rb') as f:
+        with open(file_to_cluster_pickle, 'rb') as f:  #please input
             cluster_label = pickle.load(f)
             
     elif cancer_type == 'READ':
         
-        with open('../data/READ_Frozen/EXTRACTED_FEATURE/R50ImageNet_TCGA_feature_tumor_only.pkl', 'rb') as f:
+        with open(file_to_patch_features_pickle_READ, 'rb') as f:  #please input
             patch_features = pickle.load(f)
 
-        with open('/data/READ_Frozen/EXTRACTED_FEATURE/R50ImageNet_TCGA_{}_cluster_label_k=10_tumor_only.pkl', 'rb') as f:
+        with open(file_to_cluster_pickle_READ, 'rb') as f:  #please input
             cluster_label = pickle.load(f)
 
     elif cancer_type == "CRC" :
 
-        patch_features = joblib.load('../data/COAD_Frozen/EXTREACT_FEATURE/ResNet50ImageNet_TCGA_feature_tumor_only.pkl')
+        patch_features = joblib.load(file_to_patch_features_pickle_COAD)  #please input
 
-        with open('../data/READ_Frozen/EXTRACTED_FEATURE/R50ImageNet_TCGA_feature_tumor_only.pkl', 'rb') as f:
+        with open(file_to_patch_features_pickle_READ, 'rb') as f:  #please input
             patch_features.update(pickle.load(f))
 
 
-        with open('../data/COAD_Frozen/EXTREACT_FEATURE/ResNet50ImageNet_TCGA_{}_cluster_label_k=10_tumor_only.pkl'.format(level), 'rb') as f:
+        with open(file_to_cluster_pickle_COAD, 'rb') as f:  #please input
             cluster_label = pickle.load(f)
 
-        with open('/data/READ_Frozen/EXTRACTED_FEATURE/R50ImageNet_TCGA_{}_cluster_label_k=10_tumor_only.pkl', 'rb') as f:
+        with open(file_to_cluster_pickle_READ, 'rb') as f:  #please input
             cluster_label.update(pickle.load(f))
     else:
         raise ValueError("Not an available cancer type!")
@@ -84,15 +64,7 @@ def load_label(path):
         dic = pickle.load(f)
     return dic       
 
-def get_TMA_available_id(keys, lookup, tumor_id_lookup):
-    available_ids = []
-    for p in keys:
-        arr = p.split('_')
-        name = '_'.join((arr[0], arr[1], arr[2]))
-        if(name in tumor_id_lookup and tumor_id_lookup in lookup.keys()):
-            available_ids.append(tumor_id_lookup[name])
-    available_ids = set(available_ids)
-    return available_ids
+
 def get_available_id(lookup, cluster_label):
     has_label_patient_id = list(lookup.keys())
     available_ids = []

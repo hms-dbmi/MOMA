@@ -168,36 +168,3 @@ plt.plot([0, 1], [0, 1], linestyle='--', lw=2, color='black', alpha=1.0)
 
 plt.legend(loc="lower right")
 plt.savefig('{}_roc.jpg'.format(i+10))
-
-#             if min_loss > val_logs['loss']:
-#                 min_loss = val_logs['loss']
-#                 if(not os.path.exists(os.path.join(args.save_path, str(i)))):
-#                     os.mkdir(os.path.join(args.save_path, str(i)))
-#                 torch.save(model.state_dict(), model_name)
-#                 print('Model save # {}'.format(model_name))
-        
-
-        # holdout test
-#         if(args.evaluate_mode == 'holdout'):
-#             model.load_state_dict(torch.load(model_name))
-
-#             _, test_dataset, positive_count, negative_count = cv_data_func(available_patient_id,
-#                                                                             patches_features,
-#                                                                             cluster_labels,
-#                                                                             train_index,
-#                                                                             test_index,
-#                                                                             lookup_dic,
-#                                                                             level = args.level)
-#             test_loader = DataLoader(test_dataset, batch_size = 1, shuffle = False, num_workers = 4, pin_memory = True, dropout = False)
-
-            
-#             test_epoch = ValidEpoch(model, device = 'cuda', stage = 'Holdout testing', 
-#                                 positive_count = positive_count, negative_count = negative_count)
-
-#             test_logs = test_epoch.run(test_loader)
-
-#             break
-# -
-
-
-

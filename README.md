@@ -26,12 +26,30 @@ Histopathology Images Predicted the Key Multi-Omics Aberrations and Prognoses in
 ## Whole Slide Images Tiling
 Please refer to this github [repo](https://github.com/mahmoodlab/CLAM), or you can download the processed dataset provided by [Kather et al](https://www.nature.com/articles/s41591-019-0462-y).
 
-## Data Preparation
-* Survival Prediction ## 
+## Feature Extraction
+You can use any pre-trained CNN model (like our multi-omics characterization task) or train model on our own (like our survival prediction task) to extract each patchs' features.
 
+## Data Preparation
+* Survival Prediction
+    * Color normalization
+    * Make a dataframe
+        ``` python
+        # Survival dataframe
+        data = {
+            'bcr_patient_barcode' : patient id,
+            'vital_status' : overalall survival status or disease free status,
+            'Days' : overalall survival days or disease free days
+            '0' : pathology image feature (dimension 1)
+            '1' : pathology image feature (dimension 2)
+            ...
+            'n' : pathology image feature (dimension n)
+        }
+        
+        df = pd.DataFrame(data)
+        ```
 
 * Multi-omics characterization
-    * You can use any pre-trained CNN model to extract each patch's features. Organizing as following Python dictionary format and saving as pickle file.
+
     * XXX_id can be patient’s ID or slide’s ID, which is depanding on your task. And please be sure that the patch_name in features pickle file and in cluster pickle file is the same.
     * Sample file
 
@@ -73,18 +91,18 @@ Please refer to this github [repo](https://github.com/mahmoodlab/CLAM), or you c
 
 
 ## Usage
-* Survival Prediction ##
-
+* Survival Prediction
+    * Both Overall survival prediction and disease free prediction are the same .ipynb file
 
 * Multi-omics characterization
     * Sample Command
         ``` python
-        # Training & Validation
+        # Training
         python3 Train.py --level patient --hidden_dim 512 --encoder_layer 6 --k_sample 3 --tau 0.5 --save_path 'path/to/save/' --label 'path/to/label pickle file' --use_kather_data True --epoch 60 --lr 3e-4 --evaluate_mode kfold --kfold 5
         ```
         ``` python
-        # TMA External Validation
-        python3 TMA_Validation.py --level patient --hidden_dim 512 --encoder_layer 6 --k_sample 3 -- tau 0.5 --save_path 'path/to/saved/weights' --label 'path/to/label pickle file' --evaluate_mode kfold --kfold 5
+        # Validation
+        python3 Validation.py --level patient --hidden_dim 512 --encoder_layer 6 --k_sample 3 --tau 0.5 --save_path 'path/to/save/' --label 'path/to/label pickle file' --use_kather_data True
         ```
         ```shell script
 
