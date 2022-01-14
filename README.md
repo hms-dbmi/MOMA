@@ -1,4 +1,4 @@
-# MOMA: Multi-omics Multi-cohort Assessment (MOMA) platform
+# MOMA: The Multi-omics Multi-cohort Assessment (MOMA) Platform
 Histopathology Images Predicted the Key Multi-Omics Aberrations and Prognoses in Colorectal Cancer: A Multi-Cohort Validation Study (in preparation)
 
 ![](https://i.imgur.com/qm4OLtI.png)
