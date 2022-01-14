@@ -27,7 +27,7 @@ Histopathology Images Predicted the Key Multi-Omics Aberrations and Prognoses in
 Please refer to this github [repo](https://github.com/mahmoodlab/CLAM), or you can download the processed dataset provided by [Kather et al](https://www.nature.com/articles/s41591-019-0462-y).
 
 ## Data Preparation
-* Survival Prediction
+* Survival Prediction ## 
 
 
 * Multi-omics characterization
@@ -73,7 +73,7 @@ Please refer to this github [repo](https://github.com/mahmoodlab/CLAM), or you c
 
 
 ## Usage
-* Survival Prediction
+* Survival Prediction ##
 
 
 * Multi-omics characterization
