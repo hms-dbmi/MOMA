@@ -24,10 +24,9 @@ Histopathology Images Predicted the Key Multi-Omics Aberrations and Prognoses in
     * tqdm
 
 ## Data Proprocessing
-* Tiling : Modify from github [repo](https://github.com/mahmoodlab/deepslide), or you can download the processed dataset provided by [Kather et al](https://www.nature.com/articles/s41591-019-0462-y).
+* Tiling : Modify from github [Deepslide](https://github.com/mahmoodlab/deepslide), or you can download the processed dataset provided by [Kather et al](https://www.nature.com/articles/s41591-019-0462-y).
 * Tumor detection : Resnet50
-* Color normalization : Modify from github [repo](https://github.com/schaugf/HEnorm_python)
-Please refer to this github [repo]([https://github.com/mahmoodlab/CLAM](https://github.com/BMIRDS/deepslide)])
+* Color normalization : Modify from github [HEnorm_python](https://github.com/schaugf/HEnorm_python)
 
 ## Feature Extraction
 You can use any pre-trained CNN model (like our multi-omics characterization task) or train model on our own (like our survival prediction task) to extract each patchs' features.
