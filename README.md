@@ -23,8 +23,8 @@ Histopathology Images Predicted the Key Multi-Omics Aberrations and Prognoses in
     * opencv-python
     * tqdm
 
-## Whole Slide Images Tiling
-Please refer to this github [repo](https://github.com/mahmoodlab/CLAM), or you can download the processed dataset provided by [Kather et al](https://www.nature.com/articles/s41591-019-0462-y).
+## D
+Please refer to this github [repo]([https://github.com/mahmoodlab/CLAM](https://github.com/BMIRDS/deepslide))
 
 ## Feature Extraction
 You can use any pre-trained CNN model (like our multi-omics characterization task) or train model on our own (like our survival prediction task) to extract each patchs' features.
