@@ -24,6 +24,7 @@ Histopathology Images Predicted the Key Multi-Omics Aberrations and Prognoses in
     * tqdm
 
 ## Data Proprocessing
+Please refer to this github [repo](https://github.com/mahmoodlab/CLAM), or you can download the processed dataset provided by [Kather et al](https://www.nature.com/articles/s41591-019-0462-y).
 Please refer to this github [repo]([https://github.com/mahmoodlab/CLAM](https://github.com/BMIRDS/deepslide)])
 
 ## Feature Extraction
