@@ -1,5 +1,5 @@
 # MOMA: The Multi-omics Multi-cohort Assessment (MOMA) Platform
-Histopathology Images Predicted the Key Multi-Omics Aberrations and Prognoses in Colorectal Cancer: A Multi-Cohort Validation Study (in preparation)
+Pei-Chen Tsai, Tsung-Hua Lee, Kun-Chi Kuo, Fang-Yi Su, Tsung-Lu Michael Lee, Eliana Marostica, Tomotaka Ugai, Melissa Zhao, Mai Chan Lau, Juha P. Väyrynen, Marios Giannakis, Yasutoshi Takashima, Seyed Mousavi Kahaki, Kana Wu, Mingyang Song, Jeffrey A. Meyerhardt, Andrew T. Chan, Jung-Hsien Chiang, Jonathan Nowak, Shuji Ogino, Kun-Hsing Yu. Histopathology Images Predicted Multi-Omics Aberrations and Prognoses in Colorectal Cancer Patients. Nature Communications. 2023 (in press).
 
 ![](https://i.imgur.com/qm4OLtI.png)
 
