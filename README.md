@@ -34,7 +34,7 @@ You can use any pre-trained CNN model (like our multi-omics characterization tas
 ## Data Preparation
 * Survival Prediction
     * Color normalization
-    * Make a dataframe
+    * Create a dataframe
         ``` python
         # Survival dataframe
         data = {
@@ -89,12 +89,23 @@ You can use any pre-trained CNN model (like our multi-omics characterization tas
           ...
         }
         ```
-
-
+* Interpretation
+    * Create a dataframe
+        ``` python
+        # Interpretation dataframe
+        data = {
+            'fig' : fig name,
+            'folder' : file path,
+            'class' : 0~n (class num)
+          
+        }
+        
+        df = pd.DataFrame(data)
+        ```
 
 ## Usage
 * Survival Prediction
-    * Both Overall survival prediction and disease free prediction are the same .ipynb file
+    * Both Overall survival prediction and disease free prediction use the same .ipynb file
 
 * Multi-omics characterization
     * Sample Command
@@ -121,4 +132,5 @@ You can use any pre-trained CNN model (like our multi-omics characterization tas
         --evaluate_mode         Kfold or holdout test
         --kfold                 The number of fold
         ```
-
+* Interpretation
+    * It's not recommended to test data with low foreground and background ratio
