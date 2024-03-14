@@ -6,7 +6,7 @@ Pei-Chen Tsai, Tsung-Hua Lee, Kun-Chi Kuo, Fang-Yi Su, Tsung-Lu Michael Lee, Eli
 
 
 ## Requirements
-* Survival Prediction
+* Survival prediction
     * Python==3.6.0
     * tensorflow==2.4.0
     * lifelines
@@ -22,6 +22,11 @@ Pei-Chen Tsai, Tsung-Hua Lee, Kun-Chi Kuo, Fang-Yi Su, Tsung-Lu Michael Lee, Eli
     * [smooth-topk](https://github.com/oval-group/smooth-topk)
     * opencv-python
     * tqdm
+
+## Dataset
+* Survival prediction: TCGA-COAD and TCGA-READ
+* Multi-omics characterization: TCGA-COAD and TCGA-READ
+* Interpretation: Dataset provided by [Kather et al](https://zenodo.org/records/1214456)
 
 ## Data Preprocessing
 * Tiling : Modify from github [Deepslide](https://github.com/mahmoodlab/deepslide), or you can download the processed dataset provided by [Kather et al](https://www.nature.com/articles/s41591-019-0462-y).
@@ -104,8 +109,8 @@ You can use any pre-trained CNN model (like our multi-omics characterization tas
         ```
 
 ## Usage
-* Survival Prediction
-    * Both Overall survival prediction and disease free prediction use the same .ipynb file
+* Survival prediction
+    * Both overall survival prediction and disease free prediction use the same .ipynb file
 
 * Multi-omics characterization
     * Sample Command
