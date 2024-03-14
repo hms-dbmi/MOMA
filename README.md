@@ -17,19 +17,19 @@ Pei-Chen Tsai, Tsung-Hua Lee, Kun-Chi Kuo, Fang-Yi Su, Tsung-Lu Michael Lee, Eli
     * Python==3.6.0
     * torch==1.6.0
     * torchvision==0.7.0
-    * sciki-learn
+    * scikit-learn
     * numpy
     * [smooth-topk](https://github.com/oval-group/smooth-topk)
     * opencv-python
     * tqdm
 
-## Data Proprocessing
+## Data Preprocessing
 * Tiling : Modify from github [Deepslide](https://github.com/mahmoodlab/deepslide), or you can download the processed dataset provided by [Kather et al](https://www.nature.com/articles/s41591-019-0462-y).
 * Tumor detection : Resnet50
 * Color normalization : Modify from github [HEnorm_python](https://github.com/schaugf/HEnorm_python)
 
 ## Feature Extraction
-You can use any pre-trained CNN model (like our multi-omics characterization task) or train model on our own (like our survival prediction task) to extract each patchs' features.
+You can use any pre-trained CNN model (like our multi-omics characterization task) or train model on our own (like our survival prediction task) to extract each patch's features.
 
 ## Data Preparation
 * Survival Prediction
@@ -39,8 +39,8 @@ You can use any pre-trained CNN model (like our multi-omics characterization tas
         # Survival dataframe
         data = {
             'bcr_patient_barcode' : patient id,
-            'vital_status' : overalall survival status or disease free status,
-            'Days' : overalall survival days or disease free days
+            'vital_status' : overall survival status or disease free status,
+            'Days' : overall survival days or disease free days
             '0' : pathology image feature (dimension 1)
             '1' : pathology image feature (dimension 2)
             ...
@@ -52,7 +52,7 @@ You can use any pre-trained CNN model (like our multi-omics characterization tas
 
 * Multi-omics characterization
 
-    * XXX_id can be patient’s ID or slide’s ID, which is depanding on your task. And please be sure that the patch_name in features pickle file and in cluster pickle file is the same.
+    * XXX_id can be patient’s ID or slide’s ID, which is depending on your task. And please be sure that the patch_name in features pickle file and in cluster pickle file is the same.
     * Sample file
 
         ``` python
