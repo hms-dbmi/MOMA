@@ -26,7 +26,7 @@ Pei-Chen Tsai, Tsung-Hua Lee, Kun-Chi Kuo, Fang-Yi Su, Tsung-Lu Michael Lee, Eli
 ## Dataset
 * Survival prediction: TCGA-COAD and TCGA-READ
 * Multi-omics characterization: TCGA-COAD and TCGA-READ
-* Interpretation: Dataset provided by [Kather et al](https://zenodo.org/records/1214456)
+* Interpretation: Dataset(NCT-CRC-HE-100K) provided by [Kather et al](https://zenodo.org/records/1214456)
 
 ## Data Preprocessing
 * Tiling : Modify from github [Deepslide](https://github.com/mahmoodlab/deepslide), or you can download the processed dataset provided by [Kather et al](https://www.nature.com/articles/s41591-019-0462-y).
